@@ -54,13 +54,11 @@ The dashboard is structured into 9 analytical modules:
 
 ```text
 ├── data/
-│   └── hospital_readmission_data.csv   # Dataset containing patient records
-├── notebooks/
-│   └── Hospital_Readmission_Dashboard.ipynb # Main Jupyter Notebook
+│   └── hospital_readmission_data.csv[hospital.csv](https://github.com/user-attachments/files/30390864/hospital.csv)
+   # Dataset containing patient records
 ├── assets/
-│   └── hospital_final_dashboard.png    # Dashboard visualization export
-├── README.md                           # Project Documentation
-└── requirements.txt                    # List of dependencies
+│   └── hospital_final_dashboard.png  <img width="1920" height="1200" alt="hospital final dashboard" src="https://github.com/user-attachments/assets/84ec75b1-0e2f-43ce-a549-de96d726b6ca" />
+  # Dashboard visualization export
 ```
 
 ---
