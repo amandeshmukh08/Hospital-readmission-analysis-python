@@ -1,3 +1,4 @@
+
 # Hospital Readmission Analysis Dashboard
 
 ### 📌 Brief One Line Summary
@@ -21,7 +22,7 @@ This dashboard addresses these challenges by offering a centralized 9-panel visu
 ---
 
 ### 📊 Dataset
-The analysis relies on a structured healthcare dataset (`"C:\Users\ad08a\Downloads\hospital.csv"`) comprising **30,000 patient admission records** with key features including:
+The analysis relies on a structured healthcare dataset ([hospital.csv](https://github.com/user-attachments/files/30390984/hospital.csv)) comprising **30,000 patient admission records** with key features including:
 * **Patient Demographics:** Age, Age Group, Gender.
 * **Clinical Indicators:** BMI, Cholesterol Levels, Diabetes Status, Hypertension Status.
 * **Hospital Encounter Data:** Length of Stay (LOS), Medication Count, 30-Day Readmission Status (`Yes`/`No`).
