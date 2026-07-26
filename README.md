@@ -1,224 +1,81 @@
-# Hospital-readmission-analysis-python
-HOSPITAL READMISSION DASHBOARD
+# Hospital Readmission Analysis Dashboard
 
-An end-to-end Python data analysis and visualization dashboard designed to analyze patient readmission rates, demographics, health metrics, and key risk factors within a healthcare setting.
-
----
-
-## 📌 Project Overview
-Hospital readmission within 30 days is a critical quality metric in healthcare management. High readmission rates reflect operational inefficiencies and increased healthcare costs. 
-
-This project provides a comprehensive exploratory data analysis (EDA) and interactive/visual dashboard using **Python, Pandas, Seaborn, and Matplotlib**. The analysis processes **30,000 patient records** to evaluate key healthcare parameters such as age distribution, pre-existing conditions (Diabetes, Hypertension), Body Mass Index (BMI), Length of Stay (LOS), and cholesterol levels to identify patterns driving readmissions.
+### 📌 Brief One Line Summary
+An interactive Python data dashboard analyzing 30,000 patient records to evaluate 30-day readmission rates, clinical risk factors, and demographic trends.
 
 ---
 
-## 📊 Key Performance Indicators (KPIs)
-Based on the dashboard summary metrics:
-
-| Metric | Value | Description |
-| :--- | :--- | :--- |
-| **Total Patients** | `30,000` | Total cohort size analyzed |
-| **Readmission Rate** | `12.25%` | Patients readmitted within 30 days (`3,674` patients) |
-| **Average Age** | `53.9 Years` | Average age across the patient sample |
-| **Average BMI** | `28.9` | Borderline overweight demographic average |
-| **Average Stay** | `5.5 Days` | Mean duration of initial hospital admission |
-| **Avg Cholesterol** | `225.3 mg/dL` | Mean cholesterol level across patients |
+### 🔍 Overview
+This repository contains a comprehensive **Hospital Readmission Analysis Dashboard** built using **Python, Seaborn, and Matplotlib**. The project transforms complex healthcare and patient encounter data into actionable clinical insights. It empowers healthcare administrators and clinical teams to track Key Performance Indicators (KPIs), identify high-risk patient groups (such as diabetic and hypertensive patients), and optimize post-discharge care protocols.
 
 ---
 
-## 📈 Visualizations & Insights
+### 🎯 Problem Statement
+Preventable 30-day hospital readmissions are a major concern for healthcare providers, leading to increased patient risks and unnecessary operational costs. Without structured data analytics, hospital management struggles to identify:
+* Which patient age demographics experience the highest readmission rates.
+* How chronic pre-existing conditions (Diabetes, Hypertension) influence 30-day hospital return rates.
+* Patterns between length of hospital stay (LOS), BMI, cholesterol levels, and patient outcomes.
 
-The dashboard is structured into 9 analytical modules:
-
-1. **Gender Distribution**: Balanced distribution across Male (`10,097`), Female (`9,879`), and Other (`10,024`) demographics.
-2. **Readmission Status**: High proportion of non-readmitted patients (`26,326`) vs. 30-day readmissions (`3,674`).
-3. **Age Group Breakdown**: The highest patient density belongs to the `65+` elderly group (`10,244`), followed by `19–35` (`7,034`).
-4. **Diabetes vs. Readmission**: Higher proportion of readmissions among diabetic patients (`1,976`) compared to non-diabetic patients (`1,698`).
-5. **Hypertension vs. Readmission**: Hypertensive patients exhibit a higher readmission count (`1,945`) than non-hypertensive patients (`1,729`).
-6. **BMI Distribution**: Uniformly distributed BMI across range 18 to 40, centered near the sample mean of 28.9.
-7. **Length of Stay (LOS)**: Standard distribution of hospital stay duration ranging between 1 and 10 days.
-8. **Cholesterol Levels**: Uniform spread ranging between 150 mg/dL and 300 mg/dL.
-9. **Correlation Heatmap**: Evaluates linear correlations among numeric attributes (`age`, `cholesterol`, `bmi`, `medication_count`, `length_of_stay`).
+This dashboard addresses these challenges by offering a centralized 9-panel visualization layout to monitor clinical outcomes and patient demographics efficiently.
 
 ---
 
-## 🛠️ Tech Stack & Libraries
-
-- **Language:** Python 3.x
-- **Data Manipulation:** `pandas`, `numpy`
-- **Data Visualization:** `matplotlib`, `seaborn`
-
----
-
-## 📁 Repository Structure
-
-```text
-├── data/
-│   └── hospital_readmission_data.csv[hospital.csv](https://github.com/user-attachments/files/30390864/hospital.csv)
-   # Dataset containing patient records
-├── assets/
-│   └── hospital_final_dashboard.png  <img width="1920" height="1200" alt="hospital final dashboard" src="https://github.com/user-attachments/assets/84ec75b1-0e2f-43ce-a549-de96d726b6ca" />
-  # Dashboard visualization export
-```
+### 📊 Dataset
+The analysis relies on a structured healthcare dataset (`"C:\Users\ad08a\Downloads\hospital.csv"`) comprising **30,000 patient admission records** with key features including:
+* **Patient Demographics:** Age, Age Group, Gender.
+* **Clinical Indicators:** BMI, Cholesterol Levels, Diabetes Status, Hypertension Status.
+* **Hospital Encounter Data:** Length of Stay (LOS), Medication Count, 30-Day Readmission Status (`Yes`/`No`).
 
 ---
 
-## 🚀 How to Run the Project
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/hospital-readmission-dashboard.git
-cd hospital-readmission-dashboard
-```
-
-### 2. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Run the Dashboard Code
-Execute the code in Jupyter Notebook / Google Colab or run as a Python script:
-```bash
-python dashboard.py
-```
+### 🛠️ Tools and Technologies
+* **Programming Language:** Python 3.x
+* **Data Manipulation & Analysis:** Pandas, NumPy
+* **Data Visualization:** Matplotlib, Seaborn
+* **Development Environment:** Jupyter Notebook / Google Colab
+* **Version Control:** Git & GitHub
 
 ---
 
-## 💻 Dashboard Python Code
+### 🧪 Methods & Workflow
+1. **Data Cleaning & Preprocessing:** Standardized demographic labels, handled missing attributes, and categorized continuous variables (e.g., binning age into groups like `19-35`, `36-50`, `51-65`, `65+`).
+2. **KPI Calculation:** Formulated DAX-style metrics directly in Python to compute overall cohort size, average stay duration, readmission percentage, and physiological averages.
+3. **Dashboard Layout & UI/UX Design:** Programmed a custom $3 \times 3$ grid using `matplotlib.pyplot` featuring dedicated color-coded KPI cards, distribution plots, cross-tabulated bar charts, and a correlation matrix.
+4. **Statistical Analysis:** Examined correlations between numerical health indicators and assessed readmission distributions across chronic disease groups.
 
-```python
-import matplotlib.pyplot as plt
-import pandas as pd
-import seaborn as sns
+---
 
-# Load Dataset (Ensure your dataset path is correctly set)
-# df = pd.read_csv("hospital_readmission_data.csv")
+### 💡 Key Insights
+Based on the dashboard analysis of 30,000 patients:
+* **Core KPIs:** Achieved a overall **30-day Readmission Rate of 12.25%** (3,674 total readmissions), with an **Average Length of Stay of 5.5 days**, an **Average Age of 53.9 years**, and an **Average BMI of 28.9**.
+* **High-Risk Demographics:** The **65+ elderly group** represents the largest patient segment (10,244 patients), requiring targeted geriatric discharge management.
+* **Impact of Chronic Conditions:** 
+  * **Diabetes:** Diabetic patients accounted for **1,976 readmissions** compared to 1,698 in non-diabetic patients.
+  * **Hypertension:** Hypertensive patients recorded **1,945 readmissions** versus 1,729 in non-hypertensive patients.
+* **Clinical Indicators:** BMI, Cholesterol, and Length of Stay exhibit fairly uniform distributions across the cohort, showing minimal direct linear correlation with readmission when tested individually.
 
-# KPI Calculations
-total_patients = len(df)
-readmission_rate = (df["readmitted_30_days"] == "Yes").mean() * 100
-avg_age = df["age"].mean()
-avg_bmi = df["bmi"].mean()
-avg_chol = df["cholesterol"].mean()
-avg_stay = df["length_of_stay"].mean()
+---
 
-# Figure Layout Setup
-fig = plt.figure(figsize=(22, 15))
-fig.suptitle(
-    "Hospital Readmission Analysis Dashboard", fontsize=22, fontweight="bold"
+### 🖥️ Dashboard Output
+Below is the final output generated by the Python script:
+
+![Hospital Readmission Analysis Dashboard](<img width="1920" height="1200" alt="hospital final dashboard" src="https://github.com/user-attachments/assets/53f96ff2-45a1-4c72-b3fc-10285ef36cd0" />
 )
 
-# KPI Cards
-fig.text(
-    0.05,
-    0.92,
-    f"Total Patients\n{total_patients}",
-    fontsize=14,
-    bbox=dict(facecolor="skyblue", edgecolor="black", boxstyle="round"),
-)
-fig.text(
-    0.21,
-    0.92,
-    f"Readmission Rate\n{readmission_rate:.2f}%",
-    fontsize=14,
-    bbox=dict(facecolor="lightcoral", edgecolor="black", boxstyle="round"),
-)
-fig.text(
-    0.37,
-    0.92,
-    f"Average Age\n{avg_age:.1f}",
-    fontsize=14,
-    bbox=dict(facecolor="lightgreen", edgecolor="black", boxstyle="round"),
-)
-fig.text(
-    0.52,
-    0.92,
-    f"Average BMI\n{avg_bmi:.1f}",
-    fontsize=14,
-    bbox=dict(facecolor="khaki", edgecolor="black", boxstyle="round"),
-)
-fig.text(
-    0.67,
-    0.92,
-    f"Average Stay\n{avg_stay:.1f} Days",
-    fontsize=14,
-    bbox=dict(facecolor="plum", edgecolor="black", boxstyle="round"),
-)
-fig.text(
-    0.83,
-    0.92,
-    f"Avg Cholesterol\n{avg_chol:.1f}",
-    fontsize=14,
-    bbox=dict(facecolor="orange", edgecolor="black", boxstyle="round"),
-)
+---
 
-# 1. Gender Distribution
-plt.subplot(3, 3, 1)
-ax = sns.countplot(data=df, x="gender")
-for c in ax.containers:
-    ax.bar_label(c)
-plt.title("Gender Distribution")
-
-# 2. Readmission Status
-plt.subplot(3, 3, 2)
-ax = sns.countplot(data=df, x="readmitted_30_days")
-for c in ax.containers:
-    ax.bar_label(c)
-plt.title("Readmission Status")
-
-# 3. Age Group
-plt.subplot(3, 3, 3)
-ax = sns.countplot(data=df, x="age_group")
-for c in ax.containers:
-    ax.bar_label(c)
-plt.title("Age Group")
-
-# 4. Readmission by Diabetes
-plt.subplot(3, 3, 4)
-dia = pd.crosstab(df["diabetes"], df["readmitted_30_days"])
-ax = dia.plot(kind="bar", ax=plt.gca())
-for c in ax.containers:
-    ax.bar_label(c)
-plt.title("Readmission by Diabetes")
-
-# 5. Readmission by Hypertension
-plt.subplot(3, 3, 5)
-hyp = pd.crosstab(df["hypertension"], df["readmitted_30_days"])
-ax = hyp.plot(kind="bar", ax=plt.gca())
-for c in ax.containers:
-    ax.bar_label(c)
-plt.title("Readmission by Hypertension")
-
-# 6. BMI Distribution
-plt.subplot(3, 3, 6)
-sns.histplot(df["bmi"], bins=20, kde=True)
-plt.title("BMI Distribution")
-
-# 7. Length of Stay
-plt.subplot(3, 3, 7)
-sns.histplot(df["length_of_stay"], bins=20, kde=True)
-plt.title("Length of Stay")
-
-# 8. Cholesterol Distribution
-plt.subplot(3, 3, 8)
-sns.histplot(df["cholesterol"], bins=20, kde=True)
-plt.title("Cholesterol Distribution")
-
-# 9. Correlation Heatmap
-plt.subplot(3, 3, 9)
-corr = df.select_dtypes(include=["int64", "float64"]).corr()
-sns.heatmap(corr, annot=True, cmap="coolwarm", fmt=".2f", cbar=False)
-plt.title("Correlation Heatmap")
-
-plt.tight_layout(rect=[0, 0, 1, 0.90])
-plt.show()
-```
+### 🏁 Results & Conclusion
+The analysis demonstrates that pre-existing chronic conditions—specifically **Diabetes and Hypertension**—along with advanced age (65+), are key drivers of 30-day hospital readmissions. By establishing targeted post-discharge follow-up programs and personalized home care plans for elderly and diabetic patients, healthcare institutions can significantly minimize readmission rates and enhance patient care quality.
 
 ---
 
-## 🎯 Recommendations & Strategic Takeaways
-- **Target High-Risk Conditions:** Patients with **Diabetes** and **Hypertension** exhibit proportionally higher 30-day readmissions. Priority follow-up programs should focus on these pre-existing conditions.
-- **Elderly Care Optimization:** Over 34% of patients belong to the **65+ age group** (`10,244`), indicating that post-discharge support and home health monitoring for seniors can substantially reduce readmission rates.
+### 🔮 Future Work
+* **Predictive Modeling:** Build machine learning classification models (e.g., Logistic Regression, Random Forest, XGBoost) to predict readmission risk scores for individual patients upon discharge.
+* **Interactive Web App:** Transition the Matplotlib/Seaborn dashboard into an interactive web application using **Streamlit** or **Dash**.
+* **Advanced Risk Index:** Develop a composite Risk Factor Index combining age, medication count, and chronic conditions for real-time clinical decision support.
 
 ---
-*Created as part of Healthcare Data Analytics Portfolio Project.*
+
+### 👤 Author & Contact
+* **Name:** Aman Deshmukh
+* **Email:** desaman08@gmail.com
